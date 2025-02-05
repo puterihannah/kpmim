@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kolej Profesional MARA Indera Mahkota</title>
+</head>
+<body>
+    <h1>Kolej Profesional MARA Indera Mahkota</h1>
+    <h2>MENTOR</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        Mentor ID <input type="text" name="code"><br><br>
+        Mentor Name <input type="text" name="name"><br><br>
+        Mentor Email <input type="text" name="email"><br><br>
+        <input type="submit" value="SAVE"><br><br>
+    </form>
+    <br>
+    {{message}}
+    <br><br>
+        <table border="1">
+            <th>Code</th><th>Mentor Name</th><th>Mentor Email</th>
+    
+        {% for x in allmentor %}
+        <tr>
+        <td>{{x.mentorID}}</td>
+        <td>{{x.mentorName}}</td>
+        <td>{{x.mentorEmail}}</td>
+    
+        </tr>
+        {% endfor %}
+        </table>
+    <p><a href="{% url 'index' %}">Homepage</a></p>
+</body>
+</html>
+

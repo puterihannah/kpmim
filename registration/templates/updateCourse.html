@@ -1,0 +1,31 @@
+<html>
+<body>
+    <h1>WELCOME TO KPM INDERA MAHKOTA</h1>
+    <strong>UPDATE COURSE</strong><br><br>
+
+    <form action="" method="post">
+        {% csrf_token %}
+            Course Code : <input type="text" name="code" value="{{data.code}}" disabled="false"> <br>
+            Course Description : <input type="text" name="desc" value="{{data.description}}"><br>
+            <input type ="submit" value="SAVE">
+    </form>
+    <br><br>
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Description</th>
+        <th>Update?</th>
+    </tr>
+
+    {% for data in allcourse %}
+    <tr>
+        <td>{{data.code}}</td>
+        <td>{{data.description}}</td>
+        <td><a href = "updateCourse/{{data.code}}"Update</td>
+    </tr>
+    {% endfor %}
+</table>
+    <BR><BR>
+    <p><a href="{% url 'index' %}">Homepage</a><p></p>
+</body>
+</html>

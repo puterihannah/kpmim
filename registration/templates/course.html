@@ -1,0 +1,26 @@
+<html>
+<body>
+    <h1>Kolej Profesional Mara Indera Mahkota</h1>
+    <h2>COURSE</h2>
+    <form action="save_update_course/{{data.code}}" method="post">
+        {% csrf_token %}
+        Course Code <input type="text" name="code"><br><br>
+        Description <input type="text" name="desc"><br><br>
+        <input type="submit" value="SAVE"><br><br>
+    </form>
+    {{message}}
+<br><br>
+    <table border="1">
+        <th>Code</th><th>Description</th>
+
+    {% for x in allcourse %}
+    <tr>
+    <td>{{x.code}}</td>
+    <td>{{x.description}}</td>
+
+    </tr>
+    {% endfor %}
+    </table>
+    <p><a href="{% url 'index' %}">Homepage</a><p>
+</body>
+</html>

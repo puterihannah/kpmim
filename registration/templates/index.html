@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to KPMIM Registration</h1>
+    {% with firstname="Hannah"%}
+    <h2>Hello {{ firstname }}, how are you?</h2>
+    
+    <p>Also hello to {{ fathername }}, and {{ mothername }} <p>
+    {% endwith %}
+
+    {% if greeting == 1 %}
+    <h1>Hello</h1>
+    {% endif %}
+
+    <p><a href="{% url 'course' %}">INSERT COURSE</a><p>
+    <p><a href="{% url 'mentor' %}">INSERT MENTOR</a><p></p>
+    <p><a href="{% url 'searchcourse' %}">SEARCH COURSE HERE</a><p></p>
+    <p><a href="{% url 'updateCourse' %}">UPDATE COURSE HERE</a><p></p>
+
+</body>
+</html>
+
+
